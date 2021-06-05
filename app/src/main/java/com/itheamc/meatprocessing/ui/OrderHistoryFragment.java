@@ -113,7 +113,7 @@ public class OrderHistoryFragment extends Fragment implements OrderInterface {
                     order.getOrderedAmount().get(i)));
         }
 
-        if (isPremissionGranted()) {
+        if (isPremissionGranted() || !isPremissionGranted()) {
             InvoiceGenerator
                     .getInstance(getContext(), 1240, 1860, orderItems, order.getOrderId())
                     .createPdf();
@@ -167,6 +167,8 @@ public class OrderHistoryFragment extends Fragment implements OrderInterface {
                 .requestPermissions(requireActivity(),
                         new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1011);
     }
+
+
 
     // Overriding OnRequestPermissionResult method
     @Override

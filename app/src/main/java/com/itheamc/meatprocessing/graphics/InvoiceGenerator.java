@@ -2,6 +2,7 @@ package com.itheamc.meatprocessing.graphics;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -9,6 +10,7 @@ import android.graphics.Typeface;
 import android.graphics.pdf.PdfDocument;
 import android.os.Build;
 import android.os.Environment;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
@@ -224,7 +226,10 @@ public class InvoiceGenerator {
     // function to store generated pdf file in the local storage
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     private boolean isStored(PdfDocument pdfDocument, String fileName) {
-        File pdfDirPath = new File(Environment.getExternalStorageDirectory(), "/" + fileName + ".pdf");
+        ContextWrapper contextWrapper = new ContextWrapper(context);
+        File file = contextWrapper.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS);
+        File pdfDirPath = new File(file, "/" + fileName + ".pdf");
+        Log.d(TAG, "isStored: "+ pdfDirPath.toString());
         try {
             pdfDocument.writeTo(new FileOutputStream(pdfDirPath));
             return true;

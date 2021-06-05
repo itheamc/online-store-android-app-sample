@@ -48,11 +48,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "512058925037-shp6hnaaf6dcl4hnd3i46v1fr4tlamsl.apps.googleusercontent.com",
+          "client_id": "512058925037-2phpngkrsbqj6d8gjkjgsq8hp32q6m3s.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.itheamc.meatprocessing",
-            "certificate_hash": "722966d718a36ebb0ffeab7833afa37301f324e2"
+            "certificate_hash": "5bf4d6405ff542e819b92355a8e254b8e996e0e9"
           }
         }
       ],
