@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/loginConstraintLayout"
+    tools:context=".ui.LoginFragment">
+
+
+    <Button
+        android:id="@+id/mobile_signin_button"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/sign_in_with_mobile"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/google_signin_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <Button
+        android:id="@+id/google_signin_button"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="@string/sign_in_with_google"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:text="@string/policy_acceptance_info"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/privacy_policy"
+        app:layout_constraintEnd_toEndOf="@+id/privacy_policy"
+        app:layout_constraintStart_toStartOf="@+id/privacy_policy"
+        tools:ignore="SmallSp" />
+
+    <TextView
+        android:id="@+id/privacy_policy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-thin"
+        android:text="@string/privacy_policy"
+        android:textSize="10sp"
+        android:textStyle="bold|italic"
+        android:textColor="@color/purple_500"
+        app:layout_constraintBottom_toTopOf="@+id/and_textview"
+        app:layout_constraintEnd_toEndOf="@+id/and_textview"
+        app:layout_constraintStart_toStartOf="@+id/and_textview"
+        tools:ignore="SmallSp" />
+
+    <TextView
+        android:id="@+id/and_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/and"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/terms_conditions"
+        app:layout_constraintEnd_toEndOf="@+id/terms_conditions"
+        app:layout_constraintStart_toStartOf="@+id/terms_conditions"
+        tools:ignore="SmallSp" />
+
+    <TextView
+        android:id="@+id/terms_conditions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif-thin"
+        android:text="@string/terms_and_conditions"
+        android:textSize="10sp"
+        android:textStyle="bold|italic"
+        android:textColor="@color/purple_500"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="SmallSp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

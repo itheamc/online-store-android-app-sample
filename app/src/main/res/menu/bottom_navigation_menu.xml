@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:enabled="true"
+        android:icon="@drawable/home_icon_24"
+        android:title="@string/home"/>
+    <item
+        android:id="@+id/cartFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_cart"
+        android:title="@string/cart"/>
+    <item
+        android:id="@+id/distributionsFragment"
+        android:enabled="true"
+        android:icon="@drawable/location_distribution_24"
+        android:title="@string/distribution_points"/>
+    <item
+        android:id="@+id/settingFragment"
+        android:enabled="true"
+        android:icon="@drawable/settings_24"
+        android:title="@string/setting"/>
+
+</menu>

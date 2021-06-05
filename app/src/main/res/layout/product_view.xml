@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="product"
+            type="com.itheamc.meatprocessing.models.external.Products" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:cardCornerRadius="8dp"
+        app:cardBackgroundColor="?attr/colorOnBackground">
+
+        <TextView
+            android:id="@+id/availability_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginBottom="36dp"
+            android:alpha="0.2"
+            android:fontFamily="sans-serif-medium"
+            android:rotation="-41"
+            android:rotationX="37"
+            android:text="@string/outofstock"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:translationZ="1dp"
+            tools:targetApi="lollipop" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/transparent">
+
+            <ImageView
+                android:id="@+id/product_image"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:imageSource="@{product.productImages.get(1)}"
+                android:scaleType="centerCrop"
+                android:src="@drawable/processed_meat"
+                android:layout_marginBottom="16dp"
+                android:foreground="@{!product.available ? @color/blacky : @color/transparent}"
+                android:alpha="0.8"
+                android:contentDescription="@string/product_image" />
+
+            <TextView
+                android:id="@+id/product_name"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{product.productName}"
+                android:textStyle="bold"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/availability"
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{!product.available ? @string/outofstock : @string/available}"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"/>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

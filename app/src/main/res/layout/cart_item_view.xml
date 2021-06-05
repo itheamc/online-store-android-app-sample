@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="cartitem"
+            type="com.itheamc.meatprocessing.models.internal.CartItems" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:layout_marginTop="6dp">
+
+        <ImageView
+            android:id="@+id/product_imageview"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:imageSource="@{cartitem.product.productImages.get(0)}"
+            android:scaleType="centerCrop"
+            android:src="@drawable/processed_meat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/product_name_textview"
+            style="@style/TextAppearance.MaterialComponents.Body2"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="4dp"
+            android:ellipsize="middle"
+            android:text="@{cartitem.product.productName}"
+            app:layout_constraintStart_toEndOf="@+id/product_imageview"
+            app:layout_constraintTop_toTopOf="@+id/product_imageview"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/product_price_textview"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@{`@` + String.valueOf(cartitem.product.productPrice)}"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="@+id/product_name_textview"
+            app:layout_constraintTop_toBottomOf="@+id/product_name_textview" />
+
+        <TextView
+            android:id="@+id/quantity_textview"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:text="@{String.format(`%s %s`, String.valueOf(cartitem.orderedQuantity), @string/unit)}"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="@+id/product_price_textview"
+            app:layout_constraintStart_toEndOf="@+id/product_name_textview"
+            app:layout_constraintTop_toTopOf="@+id/product_name_textview" />
+
+        <TextView
+            android:id="@+id/total_amount"
+            style="@style/TextAppearance.MaterialComponents.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.format(`%s %s`, @string/currency, String.valueOf(cartitem.orderedQuantity * cartitem.product.productPrice))}"
+            app:layout_constraintBottom_toBottomOf="@+id/quantity_textview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/quantity_textview" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

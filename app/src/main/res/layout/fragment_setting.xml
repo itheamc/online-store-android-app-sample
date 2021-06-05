@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="apperance"
+            type="Integer" />
+
+        <variable
+            name="language"
+            type="Integer" />
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="imageurl"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/settingConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.SettingFragment">
+
+        <!-- Account Section -->
+        <TextView
+            android:id="@+id/account_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/account"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/account_textview_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/account_textview" />
+
+<!--        <ImageView-->
+<!--            android:id="@+id/account_icon"-->
+<!--            android:layout_width="36dp"-->
+<!--            android:layout_height="36dp"-->
+<!--            android:contentDescription="@string/apperance"-->
+<!--            android:src="@drawable/account_circle_24"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/account_subtitle"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/account_textview"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/user_name_textview" />-->
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/account_icon"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:contentDescription="@string/apperance"
+            android:src="@drawable/account_circle_24"
+            android:setUserImage="@{imageurl}"
+            app:civ_border_width="2dp"
+            app:civ_border_color="@color/dark_orange"
+            app:layout_constraintBottom_toBottomOf="@+id/account_subtitle"
+            app:layout_constraintStart_toStartOf="@+id/account_textview"
+            app:layout_constraintTop_toTopOf="@+id/user_name_textview" />
+
+        <TextView
+            android:id="@+id/user_name_textview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:drawableEnd="@drawable/arrow_right_24"
+            android:drawableRight="@drawable/arrow_right_24"
+            android:fontFamily="sans-serif-condensed-light"
+            android:text="@{name}"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/account_icon"
+            app:layout_constraintTop_toBottomOf="@+id/account_textview_divider" />
+
+        <TextView
+            android:id="@+id/account_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-thin"
+            android:text="@string/account_setting_subtitle"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="@+id/user_name_textview"
+            app:layout_constraintTop_toBottomOf="@+id/user_name_textview" />
+
+        <!-- General Setting Section -->
+
+        <TextView
+            android:id="@+id/general_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/general_setting"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/account_textview"
+            app:layout_constraintTop_toBottomOf="@id/account_subtitle" />
+
+        <View
+            android:id="@+id/general_textview_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/general_textview" />
+
+        <ImageView
+            android:id="@+id/appearance_icon"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:contentDescription="@string/apperance"
+            android:src="@drawable/theme_24"
+            app:layout_constraintBottom_toBottomOf="@+id/appearance_sub_title"
+            app:layout_constraintStart_toStartOf="@+id/general_textview"
+            app:layout_constraintTop_toTopOf="@+id/appearance_setting_title" />
+
+        <TextView
+            android:id="@+id/appearance_setting_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:drawableEnd="@{apperance == 0 ? @drawable/arrow_down_24 : @drawable/arrow_up_24}"
+            android:drawableRight="@{apperance == 0 ? @drawable/arrow_down_24 : @drawable/arrow_up_24}"
+            android:fontFamily="sans-serif-condensed-light"
+            android:text="@string/apperance"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/appearance_icon"
+            app:layout_constraintTop_toBottomOf="@+id/general_textview_divider" />
+
+        <TextView
+            android:id="@+id/appearance_sub_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-thin"
+            android:text="@string/choose_theme_apperance"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="@+id/appearance_setting_title"
+            app:layout_constraintTop_toBottomOf="@+id/appearance_setting_title" />
+
+
+        <RadioGroup
+            android:id="@+id/apperance_radio_group"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/appearance_setting_title"
+            app:layout_constraintStart_toStartOf="@+id/appearance_sub_title"
+            app:layout_constraintTop_toBottomOf="@+id/appearance_sub_title">
+
+            <RadioButton
+                android:id="@+id/light_mode_theme"
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableStart="@drawable/light_mode_24"
+                android:drawableLeft="@drawable/light_mode_24"
+                android:text="@string/light_mode_theme"
+                android:textStyle="italic" />
+
+            <RadioButton
+                android:id="@+id/dark_mode_theme"
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableStart="@drawable/dark_mode_24"
+                android:drawableLeft="@drawable/dark_mode_24"
+                android:text="@string/dark_mode_theme"
+                android:textStyle="italic" />
+
+            <RadioButton
+                android:id="@+id/follow_system_theme"
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableStart="@drawable/auto_mode_24"
+                android:drawableLeft="@drawable/auto_mode_24"
+                android:text="@string/follow_system_theme"
+                android:textStyle="italic" />
+        </RadioGroup>
+
+        <!-- Language section -->
+
+        <ImageView
+            android:id="@+id/language_icon"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:contentDescription="@string/language_setting"
+            android:src="@drawable/language_24"
+            app:layout_constraintBottom_toBottomOf="@+id/language_sub_title"
+            app:layout_constraintStart_toStartOf="@+id/appearance_icon"
+            app:layout_constraintTop_toTopOf="@+id/language_setting_title" />
+
+        <TextView
+            android:id="@+id/language_setting_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:drawableEnd="@{language == 0 ? @drawable/arrow_down_24 : @drawable/arrow_up_24}"
+            android:drawableRight="@{language == 0 ? @drawable/arrow_down_24 : @drawable/arrow_up_24}"
+            android:fontFamily="sans-serif-condensed-light"
+            android:text="@string/language_setting"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/language_icon"
+            app:layout_constraintTop_toBottomOf="@+id/apperance_radio_group" />
+
+        <TextView
+            android:id="@+id/language_sub_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-thin"
+            android:text="@string/language_setting_sub_title"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="@+id/language_setting_title"
+            app:layout_constraintTop_toBottomOf="@+id/language_setting_title" />
+
+
+        <RadioGroup
+            android:id="@+id/language_radio_group"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/language_setting_title"
+            app:layout_constraintStart_toStartOf="@+id/language_sub_title"
+            app:layout_constraintTop_toBottomOf="@+id/language_sub_title">
+
+            <RadioButton
+                android:id="@+id/english_language"
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/english"
+                android:textStyle="italic" />
+
+            <RadioButton
+                android:id="@+id/nepali_language"
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/nepali"
+                android:textStyle="italic" />
+
+            <RadioButton
+                android:id="@+id/tharu_language"
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tharu"
+                android:textStyle="italic" />
+        </RadioGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

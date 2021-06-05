@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "512058925037",
+    "firebase_url": "https://meat-processing.firebaseio.com",
+    "project_id": "meat-processing",
+    "storage_bucket": "meat-processing.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:512058925037:android:5a974e818d43cff61351e4",
+        "android_client_info": {
+          "package_name": "com.itheamc.lpgagrofarm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "512058925037-5226kai2vic3c4oa916ffq9nb4nu41rn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.itheamc.lpgagrofarm",
+            "certificate_hash": "722966d718a36ebb0ffeab7833afa37301f324e2"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEC-KsLvIt3WZY4vUFUltAlJRAvnZkOZo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "512058925037-pjgpn676j2h5a9j3eap8e4g6cc2tu4vm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:512058925037:android:028a366ea3507edb1351e4",
+        "android_client_info": {
+          "package_name": "com.itheamc.meatprocessing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "512058925037-shp6hnaaf6dcl4hnd3i46v1fr4tlamsl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.itheamc.meatprocessing",
+            "certificate_hash": "722966d718a36ebb0ffeab7833afa37301f324e2"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEC-KsLvIt3WZY4vUFUltAlJRAvnZkOZo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "512058925037-pjgpn676j2h5a9j3eap8e4g6cc2tu4vm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

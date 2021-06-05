@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="user"
+            type="com.itheamc.meatprocessing.models.external.Users" />
+
+        <variable
+            name="constant"
+            type="com.itheamc.meatprocessing.variables.Constants" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.ProfileFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:id="@+id/signout_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/signout"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/info_card_view" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/info_card_view"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="90dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="36dp">
+
+                    <TextView
+                        android:id="@+id/user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="center"
+                        android:text="@{user.userName}"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/user_phome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@{user.userPhone}"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/user_name"
+                        app:layout_constraintStart_toStartOf="@+id/user_name"
+                        app:layout_constraintTop_toBottomOf="@+id/user_name" />
+
+
+                    <TextView
+                        android:id="@+id/orders_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="36dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/orders"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/user_phome" />
+
+
+                    <ImageView
+                        android:id="@+id/unconfirmed_order_imageview"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="16dp"
+                        android:contentDescription="TODO"
+                        android:src="@drawable/unconfirmed_icon_24"
+                        app:layout_constraintEnd_toStartOf="@+id/underprocess_image_view"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/orders_text" />
+
+                    <TextView
+                        android:id="@+id/unconfirmed_order_badge"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginLeft="28dp"
+                        android:layout_marginBottom="28dp"
+                        android:background="@drawable/circle_badge"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="center"
+                        android:text="@string/badge_sample"
+                        android:textColor="@color/white"
+                        android:textSize="8sp"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="@+id/unconfirmed_order_imageview"
+                        app:layout_constraintStart_toStartOf="@+id/unconfirmed_order_imageview"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/unconfirmed_order_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:text="@string/unconfirmed"
+                        android:textSize="10sp"
+                        app:layout_constraintEnd_toEndOf="@+id/unconfirmed_order_imageview"
+                        app:layout_constraintStart_toStartOf="@+id/unconfirmed_order_imageview"
+                        app:layout_constraintTop_toBottomOf="@+id/unconfirmed_order_imageview"
+                        tools:ignore="SmallSp" />
+
+
+                    <ImageView
+                        android:id="@+id/underprocess_image_view"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:contentDescription="TODO"
+                        android:src="@drawable/under_process_24"
+                        app:layout_constraintBottom_toBottomOf="@+id/unconfirmed_order_imageview"
+                        app:layout_constraintEnd_toStartOf="@+id/ontheway_image_view"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/unconfirmed_order_imageview"
+                        app:layout_constraintTop_toTopOf="@+id/unconfirmed_order_imageview" />
+
+                    <TextView
+                        android:id="@+id/underprocess_order_badge"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginLeft="28dp"
+                        android:layout_marginBottom="28dp"
+                        android:background="@drawable/circle_badge"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="center"
+                        android:text="@string/badge_sample"
+                        android:textColor="@color/white"
+                        android:textSize="8sp"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="@+id/underprocess_image_view"
+                        app:layout_constraintStart_toStartOf="@+id/underprocess_image_view"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/underprocess_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:text="@string/under_process"
+                        android:textSize="10sp"
+                        app:layout_constraintEnd_toEndOf="@+id/underprocess_image_view"
+                        app:layout_constraintStart_toStartOf="@+id/underprocess_image_view"
+                        app:layout_constraintTop_toBottomOf="@+id/underprocess_image_view"
+                        tools:ignore="SmallSp" />
+
+
+                    <ImageView
+                        android:id="@+id/ontheway_image_view"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:contentDescription="TODO"
+                        android:src="@drawable/delivering_bike_24"
+                        app:layout_constraintBottom_toBottomOf="@+id/underprocess_image_view"
+                        app:layout_constraintEnd_toStartOf="@+id/delivered_image_view"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/underprocess_image_view"
+                        app:layout_constraintTop_toTopOf="@+id/underprocess_image_view" />
+
+                    <TextView
+                        android:id="@+id/ontheway_order_badge"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginLeft="28dp"
+                        android:layout_marginBottom="28dp"
+                        android:background="@drawable/circle_badge"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="center"
+                        android:text="@string/badge_sample"
+                        android:textColor="@color/white"
+                        android:textSize="8sp"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="@+id/ontheway_image_view"
+                        app:layout_constraintStart_toStartOf="@+id/ontheway_image_view"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/ontheway_order_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:text="@string/on_the_way"
+                        android:textSize="10sp"
+                        app:layout_constraintEnd_toEndOf="@+id/ontheway_image_view"
+                        app:layout_constraintStart_toStartOf="@+id/ontheway_image_view"
+                        app:layout_constraintTop_toBottomOf="@+id/ontheway_image_view"
+                        tools:ignore="SmallSp" />
+
+                    <ImageView
+                        android:id="@+id/delivered_image_view"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/completed_order_24"
+                        app:layout_constraintBottom_toBottomOf="@+id/ontheway_image_view"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/ontheway_image_view"
+                        app:layout_constraintTop_toTopOf="@+id/ontheway_image_view"
+                        android:contentDescription="TODO" />
+
+                    <TextView
+                        android:id="@+id/delivered_order_badge"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginLeft="28dp"
+                        android:layout_marginBottom="28dp"
+                        android:background="@drawable/circle_badge"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="center"
+                        android:text="@string/badge_sample"
+                        android:textColor="@color/white"
+                        android:textSize="8sp"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="@+id/delivered_image_view"
+                        app:layout_constraintStart_toStartOf="@+id/delivered_image_view"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/order_completed_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:text="@string/completed"
+                        android:textSize="10sp"
+                        app:layout_constraintEnd_toEndOf="@+id/delivered_image_view"
+                        app:layout_constraintStart_toStartOf="@+id/delivered_image_view"
+                        app:layout_constraintTop_toBottomOf="@+id/delivered_image_view"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/address_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/address"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="@+id/orders_text"
+                        app:layout_constraintTop_toBottomOf="@+id/unconfirmed_order_text" />
+
+                    <TextView
+                        android:id="@+id/user_address"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif-light"
+                        android:maxLines="2"
+                        android:text="@{user.userAddress}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/address_text"
+                        app:layout_constraintTop_toBottomOf="@+id/address_text" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="36dp"
+                android:elevation="10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/asim"
+                app:civ_border_width="1dp"
+                app:civ_border_color="@color/dark_orange"
+                android:setUserImage="@{user.userProfile.length() > 4 ? user.userProfile : constant.USER_ICON_URL}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:targetApi="lollipop" />
+
+            <ImageView
+                android:id="@+id/add_profile_image_btn"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginBottom="4dp"
+                android:src="@drawable/add_a_photo_24"
+                android:translationZ="11dp"
+                app:layout_constraintBottom_toBottomOf="@+id/profile_image"
+                app:layout_constraintEnd_toEndOf="@+id/profile_image"
+                app:layout_constraintRight_toRightOf="@+id/profile_image"
+                tools:targetApi="lollipop" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+</layout>

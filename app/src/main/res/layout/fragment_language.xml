@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.LanguageFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:text="@string/language_setting_sub_title"
+        android:textSize="24sp"
+        android:layout_weight="1.5"
+        android:textStyle="bold" />
+
+    <RadioGroup
+        android:id="@+id/language_radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/language_setting_title"
+        app:layout_constraintStart_toStartOf="@+id/language_sub_title"
+        app:layout_constraintTop_toBottomOf="@+id/language_sub_title">
+
+        <RadioButton
+            android:id="@+id/english_language"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/language_item_background"
+            android:gravity="center"
+            android:text="@string/english"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="italic" />
+
+        <RadioButton
+            android:id="@+id/nepali_language"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/language_item_background"
+            android:gravity="center"
+            android:text="@string/nepali"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="italic" />
+
+        <RadioButton
+            android:id="@+id/tharu_language"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/language_item_background"
+            android:gravity="center"
+            android:text="@string/tharu"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="italic" />
+    </RadioGroup>
+
+    <!--Button -->
+    <Button
+        android:id="@+id/language_next_button"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:layout_margin="16dp"
+        android:text="@string/next"
+        app:cornerRadius="20dp" />
+
+</LinearLayout>
